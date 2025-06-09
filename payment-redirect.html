@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Example: Parse query string or hardcoded POST result
+    const bookingId = new URLSearchParams(window.location.search).get('bookingId');
+    const spId = new URLSearchParams(window.location.search).get('spId');
+    const postId = new URLSearchParams(window.location.search).get('postId');
+    const seekerId = new URLSearchParams(window.location.search).get('serviceSeekerId');
+
+    if (bookingId && spId && postId && seekerId) {
+      const redirectUrl = `https://fixmate.app.link/payment-result?bookingId=${bookingId}&spId=${spId}&postId=${postId}&serviceSeekerId=${seekerId}`;
+      window.location.replace(redirectUrl);
+    } else {
+      document.body.innerHTML = "<h3>Missing parameters. Please try again.</h3>";
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting to FixMate App...</p>
+</body>
+</html>
